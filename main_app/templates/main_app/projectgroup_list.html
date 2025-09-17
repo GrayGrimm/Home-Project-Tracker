@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Project Groups</h1>
+<hr />
+<ul>
+    {% for group in object_list %}
+    <li>
+        <a href="{% url 'projectgroup-detail' group.pk %}">
+            {{ group.name }}
+        </a>
+    </li>
+    {% empty %}
+    <li>No project groups yet. Begin a new quest!</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -17,8 +17,9 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/project-groups">Project Groups</a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="{% url 'projectgroup-list' %}">All Project Groups</a></li>
+                <li><a href="{% url 'projectgroup-create' %}">Add a Group</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
             </ul>
         </nav>
     </header>

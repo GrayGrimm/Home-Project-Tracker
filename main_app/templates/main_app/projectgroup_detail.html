@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header>
+    <h1>{{ projectgroup.name }} Projects</h1>
+    <div class="project-group-actions">
+        <a href="{% url 'projectgroup-update' projectgroup.pk %}">Update</a>
+        <a href="{% url 'projectgroup-delete' projectgroup.pk %}">Delete</a>
+
+    </div>
+    <hr />
+</header>
+<section class="project-container">
+    <div class="project-details">
+
+    </div>
+</section>
+
+{% endblock %}
