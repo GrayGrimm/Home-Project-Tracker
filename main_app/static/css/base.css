@@ -1,0 +1,111 @@
+/* === Root Variables for Theme Control === */
+:root {
+  --bg-parchment: #F5F0E6;
+  --text-ink: #2E2E2E;
+  --accent-spring: #7A9E7E;
+  --accent-summer: #DFAF6A;
+  --accent-fall: #B75D5D;
+  --accent-winter: #A3BFD9;
+  --complete-glow: #C8D6B9;
+  --urgent-ritual: #8C3A3A;
+  --border-clay: #B8A89F;
+  --font-body: 'Georgia', serif;
+  --font-headings: 'Cinzel', serif;
+}
+
+/* === Global Reset + Base Styling === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-parchment);
+  color: var(--text-ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 2rem;
+}
+/* === Nav === */
+nav {
+    margin: 10px;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: var(--link-hover-color);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  padding: 5px 8px;
+}
+
+/* === Headings === */
+h1, h2, h3, h4 {
+  font-family: var(--font-headings);
+  margin-bottom: 1rem;
+  color: var(--text-ink);
+}
+
+/* === Cards / Containers === */
+.card {
+  background-color: white;
+  border: 2px solid var(--border-clay);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+/* === Buttons === */
+button {
+  background-color: var(--accent-spring);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent-fall);
+}
+
+/* === Seasonal Tags === */
+.tag-spring { background-color: var(--accent-spring); }
+.tag-summer { background-color: var(--accent-summer); }
+.tag-fall   { background-color: var(--accent-fall); }
+.tag-winter { background-color: var(--accent-winter); }
+
+/* === Completion Rituals === */
+.complete {
+  background-color: var(--complete-glow);
+  border-left: 6px solid var(--accent-spring);
+}
+
+.urgent {
+  border-left: 6px solid var(--urgent-ritual);
+  background-color: #fbeaea;
+}
