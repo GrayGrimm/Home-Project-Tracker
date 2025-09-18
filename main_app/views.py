@@ -5,6 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 
@@ -41,10 +42,22 @@ class ProjectGroupUpdate(LoginRequiredMixin, UpdateView):
     model = ProjectGroup
     fields = ["name", "type"]
 
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        if obj.user != self.request.user:
+            raise PermissionDenied
+        return obj
+
 
 class ProjectGroupDelete(LoginRequiredMixin, DeleteView):
     model = ProjectGroup
     success_url = "/projectgroups/"
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        if obj.user != self.request.user:
+            raise PermissionDenied
+        return obj
 
 
 def signup(request):
