@@ -1,8 +1,17 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="top-of-page-content">
-<h1> Welcome to the Best Home Project Tracker</h1>
-<hr />
-<p> Here you will find eveything you need to track your projects!</p>
+  <h1>Welcome to the Best Home Project Tracker</h1>
+  <hr />
+  <p>Here you will find eveything you need to track your projects!</p>
 </div>
+{% if not user.is_authenticated %}
+<section>
+  <form action="{% url 'home' %}" method="post" class="login">
+    <h1>Login</h1>
+    {% csrf_token %} {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <button type="submit" class="btn submit">Login</button>
+  </form>
+</section>
+{% endif %}
 {% endblock %}
