@@ -21,13 +21,14 @@
           <li><a href="{% url 'projectgroup-create' %}">Add a Group</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li>
-            <form id="logout-form" moethod="POST" action="{% url 'logout' %}">
+            <form id="logout-form" method="POST" action="{% url 'logout' %}">
               {% csrf_token %}
-              <button type="submit" class="btn">Log out</button>
+              <button type="submit" class="btn-link">Log out</button>
             </form>
           </li>
           {% else %}
           <li><a href="{% url 'home' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           {% endif %}
         </ul>

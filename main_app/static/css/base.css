@@ -46,7 +46,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--link-hover-color);
+  color: var(--accent-fall);
 }
 
 nav ul {
@@ -109,6 +109,23 @@ button:hover {
 
 .btn:hover {
   background-color: var(--accent-fall);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  text-decoration: none;
+  font: inherit;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-link:hover {
+  color: var(--accent-fall);
+  background: none;
 }
 
 /* === Seasonal Tags === */

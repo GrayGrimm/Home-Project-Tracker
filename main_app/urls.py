@@ -25,4 +25,5 @@ urlpatterns = [
         views.ProjectGroupDelete.as_view(),
         name="projectgroup-delete",
     ),
+    path("accounts/signup/", views.signup, name="signup"),
 ]
