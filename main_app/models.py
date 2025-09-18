@@ -11,3 +11,4 @@ class ProjectGroup(models.Model):
     
     def get_absolute_url(self):
         return reverse('projectgroup-detail', kwargs={'pk': self.id})
+    
