@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import ProjectGroup
+from .forms import ProjectForm
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -27,6 +28,11 @@ class ProjectGroupList(LoginRequiredMixin, ListView):
 
 class ProjectGroupDetail(LoginRequiredMixin, DetailView):
     model = ProjectGroup
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = ProjectForm()
+        return context
 
 
 class ProjectGroupCreate(LoginRequiredMixin, CreateView):
