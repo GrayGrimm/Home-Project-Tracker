@@ -1,0 +1,1 @@
+web: gunicorn homeprojecttracker.wsgi
