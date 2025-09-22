@@ -17,5 +17,34 @@
   <div class="project-details"></div>
   <p>Here is your lists of projects for this group!</p>
 </section>
-
+<div class="'projects-container">
+  <section class="projects">
+    <div class="subsection-title">
+      <h2>Projects</h2>
+    </div>
+    {% if projectgroup.project_set.all.count %}
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Where</th>
+          <th>Deadline</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for project in projectgroup.project_set.all %}
+        <tr>
+          <td>{{project.name}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div class="subsection-content">
+      <p>⚠️ {{ project.name }} has no projects yet</p>
+    </div>
+    {% endif %}
+  </section>
+</div>
 {% endblock %}
