@@ -1,8 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
-<link rel="stylesheet" href="{% static 'css/project-group-detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/project-group-detail.css' %}" />
 
-{% endblock %}
-{% block content %}
+{% endblock %} {% block content %}
 <header>
   <h1>{{ projectgroup.name }} Projects</h1>
   {% if projectgroup.user == request.user %}
@@ -23,12 +22,6 @@
 </section>
 <div class="projects-container">
   <section class="projects">
-    <h3>Add a Project</h3>
-    <form action="{% url 'add-project' projectgroup.id %}" method="post" class="subsection-content" autocomplete="off">
-      {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn submit">Add Project</button>
-    </form>
     <div class="subsection-title">
       <h2>Projects</h2>
     </div>
@@ -58,6 +51,16 @@
       <p>{{ projectgroup.name }} has no projects yet</p>
     </div>
     {% endif %}
+    <h3>Add a Project</h3>
+    <form
+      action="{% url 'add-project' projectgroup.id %}"
+      method="post"
+      class="subsection-content"
+      autocomplete="off"
+    >
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" class="btn submit">Add Project</button>
+    </form>
   </section>
 </div>
 {% endblock %}
