@@ -1,4 +1,4 @@
-/* === Root Variables for Theme Control === */
+/* === Root Variables === */
 :root {
   --bg-parchment: #f5f0e6;
   --text-ink: #2e2e2e;
@@ -96,6 +96,14 @@ button:hover {
   background-color: var(--accent-fall);
 }
 
+.projectgroup-links {
+  color: #8b4513;
+  text-decoration: none;
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+}
+
 .btn {
   background-color: var(--accent-spring);
   color: white;
@@ -126,29 +134,4 @@ button:hover {
 .btn-link:hover {
   color: var(--accent-fall);
   background: none;
-}
-
-/* === Seasonal Tags === */
-.tag-spring {
-  background-color: var(--accent-spring);
-}
-.tag-summer {
-  background-color: var(--accent-summer);
-}
-.tag-fall {
-  background-color: var(--accent-fall);
-}
-.tag-winter {
-  background-color: var(--accent-winter);
-}
-
-/* === Completion Rituals === */
-.complete {
-  background-color: var(--complete-glow);
-  border-left: 6px solid var(--accent-spring);
-}
-
-.urgent {
-  border-left: 6px solid var(--urgent-ritual);
-  background-color: #fbeaea;
 }

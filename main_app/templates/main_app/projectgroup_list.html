@@ -4,7 +4,12 @@
 <ul>
   {% for group in object_list %}
   <li>
-    <a href="{% url 'projectgroup-detail' group.pk %}"> {{ group.name }} </a>
+    <a
+      href="{% url 'projectgroup-detail' group.pk %}"
+      class="projectgroup-links"
+    >
+      {{ group.name }}
+    </a>
   </li>
   {% empty %}
   <li>No project groups yet. Begin a new quest!</li>
