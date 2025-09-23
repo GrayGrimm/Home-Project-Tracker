@@ -81,7 +81,7 @@ def signup(request):
     context = {"form": form, "error_message": error_message}
     return render(request, "signup.html", context)
 
-
+@login_required
 def add_project(request, projectgroup_id):
     group = get_object_or_404(ProjectGroup, pk=projectgroup_id)
     form = ProjectForm(request.POST)

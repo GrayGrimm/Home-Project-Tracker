@@ -7,9 +7,9 @@ I have always been on the look for a good home project tracker app and nothing h
 
 Heroku Deployment: [Home Project Tracker - Heroku](https://homeprojecttracker-67239e1c1bac.herokuapp.com/)
 
-Project Planning Link: [Project Planning]()
+Project Planning Link: [Project Planning](https://trello.com/b/SdIl3xpZ/project-4-home-project-tracker)
 
-GitHub Repo Link: [GitHub Repo]()
+GitHub Repo Link: [GitHub Repo](https://github.com/GrayGrimm/Home-Project-Tracker)
 
 ## Attributions:
 
