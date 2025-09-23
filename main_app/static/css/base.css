@@ -89,7 +89,6 @@ button {
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -112,7 +111,6 @@ button:hover {
   border-radius: 4px;
   font-weight: bold;
   display: inline-block;
-  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
