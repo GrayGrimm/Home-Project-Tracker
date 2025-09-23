@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
 from .models import ProjectGroup
 from .forms import ProjectForm
 from django.views.generic import ListView, DetailView
@@ -57,7 +58,7 @@ class ProjectGroupUpdate(LoginRequiredMixin, UpdateView):
 
 class ProjectGroupDelete(LoginRequiredMixin, DeleteView):
     model = ProjectGroup
-    success_url = "/projectgroups/"
+    success_url = reverse_lazy("projectgroup-list")
 
     def get_object(self, queryset=None):
         obj = super().get_object(queryset)
@@ -80,6 +81,7 @@ def signup(request):
     context = {"form": form, "error_message": error_message}
     return render(request, "signup.html", context)
 
+
 def add_project(request, projectgroup_id):
     group = get_object_or_404(ProjectGroup, pk=projectgroup_id)
     form = ProjectForm(request.POST)
@@ -87,4 +89,4 @@ def add_project(request, projectgroup_id):
         new_project = form.save(commit=False)
         new_project.project_group = group
         new_project.save()
-    return redirect('projectgroup-detail', projectgroup_id=projectgroup_id)
+    return redirect("projectgroup-detail", pk=projectgroup_id)
