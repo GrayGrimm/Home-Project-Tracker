@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import ProjectGroup
 from .forms import ProjectForm
 from django.views.generic import ListView, DetailView
@@ -79,3 +79,12 @@ def signup(request):
     form = UserCreationForm()
     context = {"form": form, "error_message": error_message}
     return render(request, "signup.html", context)
+
+def add_project(request, projectgroup_id):
+    group = get_object_or_404(ProjectGroup, pk=projectgroup_id)
+    form = ProjectForm(request.POST)
+    if form.is_valid():
+        new_project = form.save(commit=False)
+        new_project.project_group = group
+        new_project.save()
+    return redirect('projectgroup-detail', projectgroup_id=projectgroup_id)

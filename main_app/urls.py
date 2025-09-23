@@ -26,4 +26,9 @@ urlpatterns = [
         name="projectgroup-delete",
     ),
     path("accounts/signup/", views.signup, name="signup"),
+    path(
+        "project-groups/<int:projectgroup_id>/add-project/",
+        views.add_project,
+        name="add-project",
+    ),
 ]

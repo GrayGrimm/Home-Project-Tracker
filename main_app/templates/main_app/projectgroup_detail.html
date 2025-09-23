@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
-<link rel="stylesheet" href="{% static 'css/project-group-detail.css' 'css/form.css' %}"
+<link rel="stylesheet" href="{% static 'css/project-group-detail.css' %}">
 
 {% endblock %}
 {% block content %}
@@ -21,10 +21,10 @@
   <div class="project-details"></div>
   <p>Here is your lists of projects for this group!</p>
 </section>
-<div class="'projects-container">
+<div class="projects-container">
   <section class="projects">
     <h3>Add a Project</h3>
-    <form method="post" class="subsection-content" autocomplete="off">
+    <form action="{% url 'add-project' projectgroup.id %}" method="post" class="subsection-content" autocomplete="off">
       {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn submit">Add Project</button>
@@ -36,10 +36,10 @@
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Where</th>
-          <th>Deadline</th>
-          <th>Description</th>
+          <th>🛠️ Project Name</th>
+          <th>📍 Location</th>
+          <th>⏳ Deadline</th>
+          <th>📜 Description</th>
         </tr>
       </thead>
       <tbody>
